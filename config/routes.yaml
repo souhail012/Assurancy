@@ -1,3 +1,35 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+index:
+    path: /accueil
+    controller: App\Controller\ServiceController::index
+
+about:
+    path: /about
+    controller: App\Controller\ServiceController::about
+
+offres:
+    path: /offres
+    controller: App\Controller\ServiceController::offres
+
+services:
+    path: /services
+    controller: App\Controller\ServiceController::services
+
+assistance:
+    path: /assistance
+    controller: App\Controller\ServiceController::assistance
+
+community:
+    path: /community
+    controller: App\Controller\ServiceController::community
+
+login:
+    path: /login
+    controller: App\Controller\ServiceController::login
+
+inscription:
+    path: /inscription
+    controller: App\Controller\ServiceController::inscription
+
+app_dashboard:
+    path: /dashboard
+    controller: App\Controller\DashboardController::index
