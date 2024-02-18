@@ -18,7 +18,7 @@ class Immobilier
     private ?string $adresse = null;
 
     #[ORM\Column]
-    private ?typeImm $type = null;
+    private ?string $type = null;
 
     #[ORM\Column]
     private ?int $superficie = null;
@@ -32,7 +32,7 @@ class Immobilier
     #[ORM\ManyToOne(inversedBy: 'immobiliers')]
     private ?Utilisateur $id_user = null;
 
-    public function getId(): ?int
+    public function getId_fiscal(): ?int
     {
         return $this->id_fiscal;
     }
@@ -49,12 +49,12 @@ class Immobilier
         return $this;
     }
 
-    public function getType(): ?typeImm
+    public function getType(): ?string
     {
         return $this->type;
     }
 
-    public function setType(typeImm $type): self
+    public function setType(typeImm $type): static
     {
         $this->type = $type;
 

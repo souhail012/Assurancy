@@ -34,23 +34,23 @@
     {{ form_start(form) }}
 
     <div class="form-floating mb-3">
-        {{ form_widget(form.matricule, {'attr': {'class': 'form-control input-box form-ensurance-header-control', 'placeholder': 'surname'}}) }}
-        {{ form_label(form.matricule, 'matricule') }}
+        {{ form_widget(form.id_fiscal, {'attr': {'class': 'form-control input-box form-ensurance-header-control', 'placeholder': 'surname'}}) }}
+        {{ form_label(form.id_fiscal, 'id fiscale') }}
     </div>
 
     <div class="form-floating mb-3">
-        {{ form_widget(form.type, {'attr': {'class': 'form-control input-box form-ensurance-header-control', 'placeholder': 'name'}}) }}
+        {{ form_widget(form.adresse, {'attr': {'class': 'form-control input-box form-ensurance-header-control', 'placeholder': 'name'}}) }}
+        {{ form_label(form.adresse, 'adresse') }}
+    </div>
+
+    <div class="form-floating mb-3">
+        {{ form_widget(form.type, {'attr': {'class': 'form-control input-box form-ensurance-header-control', 'placeholder': 'date'}}) }}
         {{ form_label(form.type, 'type') }}
     </div>
 
     <div class="form-floating mb-3">
-        {{ form_widget(form.modele, {'attr': {'class': 'form-control input-box form-ensurance-header-control', 'placeholder': 'date'}}) }}
-        {{ form_label(form.modele, 'marque') }}
-    </div>
-
-    <div class="form-floating mb-3">
-        {{ form_widget(form.prix, {'attr': {'class': 'form-control input-box form-ensurance-header-control', 'placeholder': 'address'}}) }}
-        {{ form_label(form.prix, 'prix') }}
+        {{ form_widget(form.superficie, {'attr': {'class': 'form-control input-box form-ensurance-header-control', 'placeholder': 'address'}}) }}
+        {{ form_label(form.superficie, 'Superficie') }}
     </div>
 
     <div class="form-floating mb-3">
@@ -58,6 +58,10 @@
         {{ form_label(form.carte_grise, 'carte grise') }}
     </div>
 
+    <div class="form-floating mb-3">
+        {{ form_widget(form.titre_prop, {'attr': {'class': 'form-control input-box form-ensurance-header-control', 'placeholder': 'tel'}}) }}
+        {{ form_label(form.titre_prop, 'titre prop') }}
+    </div>
     <div class="form-floating mb-3">
         {{ form_widget(form.status, {'attr': {'class': 'form-control input-box form-ensurance-header-control', 'placeholder': 'tel'}}) }}
         {{ form_label(form.status, 'status') }}
@@ -68,7 +72,7 @@
 
     <div class="col-12 d-grid">
         <button class="btn btn-primary rounded-pill" type="submit">Ajouter</button>
-        <p class="text-400 mt-3 text-center">Accéder à la liste des vehicules <a href="{{ path('login') }}">Cliquez ici</a></p>
+        <p class="text-400 mt-3 text-center">Accéder à la liste des immobiliers <a href="{{ path('login') }}">Cliquez ici</a></p>
     </div>
 
     {{ form_end(form) }}

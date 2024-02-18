@@ -39,7 +39,7 @@ class Utilisateur
     private ?\DateTimeInterface $date_n = null;
 
     #[ORM\Column]
-    private ?typeUser $role = null;
+    private ?String $role = null;
 
     #[ORM\OneToMany(mappedBy: 'id_user', targetEntity: Immobilier::class)]
     private Collection $immobiliers;
@@ -162,12 +162,12 @@ class Utilisateur
         return $this;
     }
 
-    public function getRole(): ?typeUser
+    public function getRole(): ?String
     {
         return $this->role;
     }
 
-    public function setRole(typeUser $role): self
+    public function setRole(typeUser $role): static
     {
         $this->role = $role;
 
@@ -382,5 +382,9 @@ class Utilisateur
         }
 
         return $this;
+    }
+    public function __toString(): string
+    {
+        return (string) $this->id;
     }
 }

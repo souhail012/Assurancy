@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Immobilier index{% endblock %}
+
+{% block body %}
+    <h1>Immobilier index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id_fiscal</th>
+                <th>Adresse</th>
+                <th>Type</th>
+                <th>Superficie</th>
+                <th>Titre_prop</th>
+                <th>Status</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for immobilier in immobiliers %}
+            <tr>
+                <td>{{ immobilier.idFiscal }}</td>
+                <td>{{ immobilier.adresse }}</td>
+                <td>{{ immobilier.type }}</td>
+                <td>{{ immobilier.superficie }}</td>
+                <td>{{ immobilier.titreProp }}</td>
+                <td>{{ immobilier.status }}</td>
+                <td>
+                    <a href="{{ path('app_immobilier_show', {'id_fiscal': immobilier.id_fiscal}) }}">show</a>
+                    <a href="{{ path('app_immobilier_edit', {'id_fiscal': immobilier.id_fiscal}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_immobilier_new') }}">Create new</a>
+{% endblock %}
